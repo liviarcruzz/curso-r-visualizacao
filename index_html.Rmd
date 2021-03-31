@@ -1,0 +1,85 @@
+---
+title: "Exercícios Xaringan"
+subtitle: "Varios"
+author: "Lívia Cruz"
+institute: "RStudio, PBC"
+date: "29/03/2021"
+output:
+  xaringan::moon_reader:
+    chakra: libs/remark-latest.min.js
+    lib_dir: libs
+    css: ['tamu', 'tamu-fonts']
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+classes: center, middle
+
+```{r setup, include=FALSE}
+xaringan::summon_remark()
+```
+
+# Primeiro Slide
+
+Segurança alimentar é o **único** ~~tratamento precoce~~ possível.
+Olha só esses produtores de orgânicos aqui na cidade: [instagram do sítio serra dourada](https://www.instagram.com/sitioserradourada/)
+
+---
+
+# Uma tabela né
+
+## com um negocio q nao tem nada a ver com comida (ou tem????)
+
+
+```{r tabela, echo=FALSE, message=FALSE, warning=FALSE}
+
+library(dados)
+#library(reactable)
+
+#reactable(pinguins)
+
+knitr::kable(pinguins[1:5,1:5])
+
+```
+
+---
+#Imagem da pasta
+## Do Exercício anterior
+```{r, echo=FALSE, fig.align='center', out.width='80%', out.height='80%'}
+knitr::include_graphics("img/240321_ex2_pinguins.png")
+```
+---
+
+#Imagem da internet 
+
+![uma pererequinha linda e colorida](https://valberto.com/wp-content/uploads/2020/08/macro-photography-frog-feature.jpg)
+---
+# Imagem da internet 
+## Centralizada, usando chunk r
+
+```{r, echo=FALSE, fig.align='center', out.width='80%', out.height='80%'}
+knitr::include_graphics('https://valberto.com/wp-content/uploads/2020/08/macro-photography-frog-feature.jpg')
+```
+---
+
+# Somatória
+
+```{r soma, echo=FALSE}
+x <- 4
+
+y <- 6
+
+z <- x+y
+
+```
+
+Aqui, temos que x+y é igual a `r z`
+
+---
+```{r, echo=FALSE}
+
+#remotes::install_github('rstudio/pagedown')
+pagedown::chrome_print("index_html.html")
+
+```
